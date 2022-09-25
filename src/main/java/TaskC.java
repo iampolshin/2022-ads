@@ -55,8 +55,8 @@ public final class TaskC {
     private static class Stack {
         private static final int MIN_CAPACITY = 16;
         private int[] elements;
-        private static int size;
-        private static int top;
+        private int size;
+        private int top;
 
         public Stack() {
             elements = new int[MIN_CAPACITY];

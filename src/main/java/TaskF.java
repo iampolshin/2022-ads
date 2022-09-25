@@ -22,11 +22,11 @@ public final class TaskF {
             input = in.next();
             switch (input) {
                 case "push_front":
-                    deque.push_front(in.nextInt());
+                    deque.pushFront(in.nextInt());
                     out.println("ok");
                     break;
                 case "push_back":
-                    deque.push_back(in.nextInt());
+                    deque.pushBack(in.nextInt());
                     out.println("ok");
                     break;
                 case "pop_front":
@@ -34,14 +34,14 @@ public final class TaskF {
                         out.println("error");
                         break;
                     }
-                    out.println(deque.pop_front());
+                    out.println(deque.popFront());
                     break;
                 case "pop_back":
                     if (deque.isEmpty()) {
                         out.println("error");
                         break;
                     }
-                    out.println(deque.pop_back());
+                    out.println(deque.popBack());
                     break;
                 case "front":
                     if (deque.isEmpty()) {
@@ -70,11 +70,11 @@ public final class TaskF {
     }
 
     private static class Deque {
-        private static Node head;
-        private static Node tail;
-        private static int size;
+        private Node head;
+        private Node tail;
+        private int size;
 
-        public void push_front(int value) {
+        public void pushFront(int value) {
             Node currNode = new Node(value);
             if (head == null) {
                 head = currNode;
@@ -87,7 +87,7 @@ public final class TaskF {
             size++;
         }
 
-        public void push_back(int value) {
+        public void pushBack(int value) {
             Node currNode = new Node(value);
             if (tail == null) {
                 tail = currNode;
@@ -100,7 +100,7 @@ public final class TaskF {
             size++;
         }
 
-        public int pop_front() {
+        public int popFront() {
             Node temp = head;
             head = head.next;
             if (head == null) {
@@ -112,7 +112,7 @@ public final class TaskF {
             return temp.value;
         }
 
-        public int pop_back() {
+        public int popBack() {
             Node temp = tail;
             tail = tail.previous;
             if (tail == null) {

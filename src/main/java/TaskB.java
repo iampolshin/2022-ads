@@ -52,9 +52,9 @@ public final class TaskB {
     }
 
     private static class Queue {
-        private static Node head;
-        private static Node tail;
-        private static int size;
+        private Node head;
+        private Node tail;
+        private int size;
 
         public void push(int number) {
             if (tail == null) {
